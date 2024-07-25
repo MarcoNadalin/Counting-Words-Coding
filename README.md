@@ -35,11 +35,11 @@ within the list.
 to prevent performance issues that may arise from storing large files into a single string.
 2. The program uses a combination of Filter and WordAnalysisTask interfaces in order to maintain
 modularity and extensibility. 
-3. The WordAnalyser task holds a list of WordAnalysisTasks so that the source file only has to be read once.
+3. The WordAnalyser class holds a list of WordAnalysisTasks so that the source file only has to be read once.
 
    For example, with 2 WordAnalysisTasks, each word is processed twice but only read once.
 4. Maven was used as a build automation tool to replicate common production environments.
-5. Java 17 was used for it's LTS support.
+5. Java 17 was used for its LTS support.
 6. JUnit was used for unit tests.
 
 ## How To Run <a name="how-to-run"></a>
