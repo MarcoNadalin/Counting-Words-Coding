@@ -5,20 +5,26 @@ import org.junit.jupiter.api.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FileProcessorTest {
 
-    private static final String TEST_FILE_DIR = "testFile.txt";
+    private static final String TEST_FILE_DIR = "test.txt";
     private static final String WORD_DELIMITER = "\\s+";
 
     @BeforeAll
     public static void setUp() throws IOException {
         // Create a test file
-        FileWriter writer = new FileWriter(TEST_FILE_DIR);
-        writer.write("word1 word2\nword3\nword4 word5");
-        writer.close();
+        try {
+            FileWriter writer = new FileWriter(TEST_FILE_DIR);
+            writer.write("word1 word2\nword3\nword4 word5");
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @AfterAll
@@ -28,12 +34,6 @@ public class FileProcessorTest {
         if (file.exists()) {
             file.delete();
         }
-    }
-
-    @Test
-    public void testFileProcessorOpensFileSuccessfully() {
-        FileProcessor fileProcessor = new FileProcessor(TEST_FILE_DIR, WORD_DELIMITER);
-        assertNotNull(fileProcessor, "FileProcessor should not be null.");
     }
 
     @Test

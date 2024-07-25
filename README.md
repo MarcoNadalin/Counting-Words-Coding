@@ -71,4 +71,6 @@ to the user when mis-used.
 3. WordAnalysisTask objects should NOT have a `printResults` method. This should be separated into its own class
 responsible for printing the results of a WordAnalysisTask.
 4. Instead of printing the results to standard output, the results could be saved to an output file instead. 
+5. Sample regex provided to filter words that are greater than 5 characters can be improved to only include letters, 
+not punctuation or numbers
 
