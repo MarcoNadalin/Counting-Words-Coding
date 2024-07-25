@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WordAnalyser:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WordAnalyser_jar</output-path>
+    <root id="archive" name="CSG_Challenge.jar">
+      <element id="module-output" name="CSG_Challenge" />
+    </root>
+  </artifact>
+</component>
